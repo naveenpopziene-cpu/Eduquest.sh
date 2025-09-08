@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Hub</title>
+    <title>EduQuest - Fun Learning</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Study Hub 📚</h1>
+    <header>
+        <h1>EduQuest 🎓</h1>
+        <p>Learn, Practice, and Challenge Yourself!</p>
+    </header>
 
-    <section id="quiz-section">
-        <h2>Quick Quiz</h2>
+    <!-- Category Selection -->
+    <section id="category-section" class="card">
+        <h2>Select Quiz Category</h2>
+        <div class="category-buttons">
+            <button onclick="startCategory('Geography')">Geography</button>
+            <button onclick="startCategory('Politics')">Politics</button>
+            <button onclick="startCategory('History')">History</button>
+            <button onclick="startCategory('Grammar')">Grammar</button>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="card" style="display:none;">
+        <h2>Quiz Time!</h2>
         <div id="quiz-container"></div>
         <button id="next-btn">Next Question</button>
         <p id="quiz-score"></p>
     </section>
 
-    <section id="game-section">
-        <h2>Math Game 🎮</h2>
+    <!-- Game Section -->
+    <section id="game-section" class="card">
+        <h2>Math Memory Game 🎮</h2>
         <p>Solve the sum:</p>
         <p id="game-question"></p>
         <input type="number" id="game-answer">
@@ -25,7 +41,10 @@
         <p id="game-feedback"></p>
     </section>
 
+    <footer>
+        <p>Made for students by Naveen</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
