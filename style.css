@@ -1,16 +1,95 @@
+/* General Page Style */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f0f8ff;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
     padding: 20px;
+    color: #333;
 }
-h1, h2 { color: #333; }
-button { padding: 10px 20px; margin: 10px; cursor: pointer; }
-input { padding: 5px; }
-section {
-    margin: 20px 0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    background: #e6f7ff;
+
+header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px #0003;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 5px 0 20px 0;
+}
+
+/* Card Style for Sections */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin: 15px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.7s ease;
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #ff512f, #dd2476);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Input */
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 70px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* Feedback and Score */
+#quiz-score, #game-feedback {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* Category Buttons */
+.category-buttons button {
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+footer {
+    color: #fff;
+    margin-top: 30px;
 }
