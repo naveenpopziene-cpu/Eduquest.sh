@@ -1,95 +1,80 @@
-/* General Page Style */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
+  background: #4a47a3;
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
 }
 
-header h1 {
-    font-size: 3rem;
-    margin: 0;
-    text-shadow: 2px 2px 5px #0003;
+h1 {
+  margin: 0;
 }
 
-header p {
-    font-size: 1.2rem;
-    margin: 5px 0 20px 0;
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px;
 }
 
-/* Card Style for Sections */
-.card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 30px 40px;
-    margin: 15px 0;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    animation: fadeIn 0.7s ease;
-}
-
-/* Buttons */
 button {
-    padding: 12px 25px;
-    margin: 8px;
-    cursor: pointer;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(to right, #ff512f, #dd2476);
-    transition: all 0.3s ease;
-    font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ff6f61;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background: #ff3b2e;
 }
 
-/* Input */
-input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 70px;
-    text-align: center;
-    margin-right: 10px;
+.quiz-container {
+  margin: 30px auto;
+  width: 80%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Feedback and Score */
-#quiz-score, #game-feedback {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 15px;
+#options button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  background: #4a90e2;
 }
 
-/* Category Buttons */
-.category-buttons button {
-    background: linear-gradient(to right, #f7971e, #ffd200);
-    color: #333;
+#options button:hover {
+  background: #357ab7;
+}
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  background: #dff9fb;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px);}
-    to { opacity: 1; transform: translateY(0);}
+#restart-btn {
+  margin-top: 15px;
+  background: #20bf6b;
 }
 
-footer {
-    color: #fff;
-    margin-top: 30px;
+#restart-btn:hover {
+  background: #16a085;
 }
