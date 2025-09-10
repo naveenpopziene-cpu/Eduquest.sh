@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduQuest - Fun Learning</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduQuest - Quizzes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>EduQuest 🎓</h1>
-        <p>Learn, Practice, and Challenge Yourself!</p>
-    </header>
+  <header>
+    <h1>Welcome to EduQuest 📚</h1>
+    <p>Your fun and interactive way to learn subjects grade-wise!</p>
+  </header>
 
-    <!-- Category Selection -->
-    <section id="category-section" class="card">
-        <h2>Select Quiz Category</h2>
-        <div class="category-buttons">
-            <button onclick="startCategory('Geography')">Geography</button>
-            <button onclick="startCategory('Politics')">Politics</button>
-            <button onclick="startCategory('History')">History</button>
-            <button onclick="startCategory('Grammar')">Grammar</button>
-        </div>
-    </section>
+  <!-- Home Page -->
+  <section id="home">
+    <h2>Select Your Grade</h2>
+    <div class="card-container">
+      <button class="grade-btn" onclick="selectGrade(6)">Grade 6</button>
+      <button class="grade-btn" onclick="selectGrade(7)">Grade 7</button>
+      <button class="grade-btn" onclick="selectGrade(8)">Grade 8</button>
+    </div>
+  </section>
 
-    <!-- Quiz Section -->
-    <section id="quiz-section" class="card" style="display:none;">
-        <h2 id="quiz-title">Quiz Time!</h2>
-        <div id="quiz-container"></div>
-        <button id="next-btn">Next Question</button>
-        <p id="quiz-score"></p>
-    </section>
+  <!-- Subject Selection -->
+  <section id="subjects" style="display:none;">
+    <h2>Select Subject</h2>
+    <div class="card-container">
+      <button class="subject-btn" onclick="startQuiz('history')">🏺 History</button>
+      <button class="subject-btn" onclick="startQuiz('geography')">🌍 Geography</button>
+      <button class="subject-btn" onclick="startQuiz('politics')">🏛 Politics</button>
+      <button class="subject-btn" onclick="startQuiz('grammar')">✍ Grammar</button>
+      <button class="subject-btn" onclick="startQuiz('maths')">➗ Maths</button>
+    </div>
+    <button onclick="goHome()">⬅ Back</button>
+  </section>
 
-    <!-- Math Game Section -->
-    <section id="game-section" class="card">
-        <h2>Math Memory Game 🎮</h2>
-        <p>Solve the sum:</p>
-        <p id="game-question"></p>
-        <input type="number" id="game-answer">
-        <button id="submit-answer">Submit</button>
-        <p id="game-feedback"></p>
-    </section>
+  <!-- Quiz Section -->
+  <section id="quiz" style="display:none;">
+    <h2 id="quiz-title"></h2>
+    <h3 id="question">Question will appear here</h3>
+    <div id="options"></div>
+    <button id="next-btn">Next</button>
+    <button onclick="goSubjects()">⬅ Back</button>
 
-    <footer>
-        <p>Made for students by Signal hackers</p>
-    </footer>
+    <!-- Score Result -->
+    <div id="result" style="display:none; margin-top:20px;"></div>
+    <button id="restart-btn" style="display:none;" onclick="restartQuiz()">🔄 Restart Quiz</button>
+  </section>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
