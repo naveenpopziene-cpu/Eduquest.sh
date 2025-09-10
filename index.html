@@ -3,23 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduQuest - Quizzes</title>
+  <title>EduQuest</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to EduQuest 📚</h1>
-    <p>Your fun and interactive way to learn subjects grade-wise!</p>
-  </header>
+  <!-- Home Screen -->
+  <section id="welcome-screen">
+    <h1>🎓 Welcome to EduQuest</h1>
+    <p>
+      EduQuest is a free and interactive learning platform designed to make studying 
+      <b>fun, simple, and effective</b>.  
+      With quizzes across <b>History</b>, <b>Geography</b>, <b>Politics</b>, <b>Grammar</b>, and <b>Mathematics</b>,  
+      you can test your knowledge, challenge yourself, and track your progress.
+    </p>
+    <p>
+      Choose your grade level (1–8), explore different subjects, and play quiz-style games 
+      that not only test memory but also build confidence in learning.  
+      EduQuest is made for students who want to learn in a <b>smart, playful, and stress-free way</b>—anytime, anywhere. 🌍
+    </p>
+    <button onclick="goToGrades()">Start Learning ➡</button>
+  </section>
 
-  <!-- Home Page -->
-  <section id="home">
+  <!-- Grade Selection -->
+  <section id="grades" style="display:none;">
     <h2>Select Your Grade</h2>
     <div class="card-container">
+      <button class="grade-btn" onclick="selectGrade(1)">Grade 1</button>
+      <button class="grade-btn" onclick="selectGrade(2)">Grade 2</button>
+      <button class="grade-btn" onclick="selectGrade(3)">Grade 3</button>
+      <button class="grade-btn" onclick="selectGrade(4)">Grade 4</button>
+      <button class="grade-btn" onclick="selectGrade(5)">Grade 5</button>
       <button class="grade-btn" onclick="selectGrade(6)">Grade 6</button>
       <button class="grade-btn" onclick="selectGrade(7)">Grade 7</button>
       <button class="grade-btn" onclick="selectGrade(8)">Grade 8</button>
     </div>
+    <button onclick="goHome()">⬅ Back</button>
   </section>
 
   <!-- Subject Selection -->
@@ -32,12 +50,13 @@
       <button class="subject-btn" onclick="startQuiz('grammar')">✍ Grammar</button>
       <button class="subject-btn" onclick="startQuiz('maths')">➗ Maths</button>
     </div>
-    <button onclick="goHome()">⬅ Back</button>
+    <button onclick="goToGrades()">⬅ Back</button>
   </section>
 
   <!-- Quiz Section -->
   <section id="quiz" style="display:none;">
     <h2 id="quiz-title"></h2>
+    <p id="progress"></p>
     <h3 id="question">Question will appear here</h3>
     <div id="options"></div>
     <button id="next-btn">Next</button>
