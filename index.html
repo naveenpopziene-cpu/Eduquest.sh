@@ -1,31 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EduQuest</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container" id="home">
-    <h1>Welcome to <span class="highlight">EduQuest</span> 🎓</h1>
-    <p>Select your grade to start your learning journey!</p>
-    <div id="grade-selection" class="grid"></div>
-  </div>
+  <div class="app">
+    <!-- Welcome / Home -->
+    <section id="home" class="card">
+      <h1>🎓 Welcome to <span class="accent">EduQuest</span></h1>
+      <p class="lead">
+        EduQuest is an interactive learning platform for Grades 1–12. Choose your grade,
+        pick a subject, and try a short 5-question quiz tailored to your level.
+      </p>
+      <button class="primary" onclick="showGrades()">Start – Select Grade</button>
+    </section>
 
-  <div class="container hidden" id="subjects">
-    <h2 id="grade-title"></h2>
-    <p>Select a subject:</p>
-    <div id="subject-selection" class="grid"></div>
-    <button class="btn" onclick="goHome()">⬅ Back</button>
-  </div>
+    <!-- Grade Selection -->
+    <section id="grades" class="card hidden">
+      <h2>Select Grade</h2>
+      <div id="grade-grid" class="grid"></div>
+      <div class="actions">
+        <button class="secondary" onclick="showHome()">⬅ Back</button>
+      </div>
+    </section>
 
-  <div class="container hidden" id="quiz">
-    <h2 id="subject-title"></h2>
-    <div id="question-container"></div>
-    <button class="btn hidden" id="next-btn" onclick="nextQuestion()">Next</button>
-    <div id="result" class="hidden"></div>
-    <button class="btn hidden" id="restart-btn" onclick="restartQuiz()">Restart</button>
+    <!-- Subject Selection -->
+    <section id="subjects" class="card hidden">
+      <h2 id="grade-heading">Grade X Subjects</h2>
+      <p id="grade-subtext">Choose a subject for your grade</p>
+      <div id="subject-grid" class="grid"></div>
+      <div class="actions">
+        <button class="secondary" onclick="showGrades()">⬅ Back</button>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card hidden">
+      <div class="quiz-header">
+        <h2 id="quiz-title">Subject Quiz</h2>
+        <div id="progress" class="progress">Question 1 of 5</div>
+      </div>
+
+      <div id="question-box" class="question-box">
+        <!-- question and options injected by script -->
+      </div>
+
+      <div class="actions">
+        <button id="nextBtn" class="primary hidden" onclick="nextQuestion()">Next</button>
+        <button class="secondary" onclick="backToSubjects()">⬅ Back</button>
+      </div>
+
+      <div id="resultBox" class="result hidden"></div>
+      <div class="actions">
+        <button id="restartBtn" class="primary hidden" onclick="restartQuiz()">Restart Quiz</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>EduQuest • Interactive practice for students • Built with ❤️</small>
+    </footer>
   </div>
 
   <script src="script.js"></script>
