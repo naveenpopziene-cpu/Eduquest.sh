@@ -7,65 +7,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Home Screen -->
-  <section id="welcome-screen">
-    <h1>🎓 Welcome to EduQuest</h1>
-    <p>
-      EduQuest is a free and interactive learning platform designed to make studying 
-      <b>fun, simple, and effective</b>.  
-      With quizzes across <b>History</b>, <b>Geography</b>, <b>Politics</b>, <b>Grammar</b>, and <b>Mathematics</b>,  
-      you can test your knowledge, challenge yourself, and track your progress.
-    </p>
-    <p>
-      Choose your grade level (1–8), explore different subjects, and play quiz-style games 
-      that not only test memory but also build confidence in learning.  
-      EduQuest is made for students who want to learn in a <b>smart, playful, and stress-free way</b>—anytime, anywhere. 🌍
-    </p>
-    <button onclick="goToGrades()">Start Learning ➡</button>
-  </section>
+  <div class="container" id="home">
+    <h1>Welcome to <span class="highlight">EduQuest</span> 🎓</h1>
+    <p>Select your grade to start your learning journey!</p>
+    <div id="grade-selection" class="grid"></div>
+  </div>
 
-  <!-- Grade Selection -->
-  <section id="grades" style="display:none;">
-    <h2>Select Your Grade</h2>
-    <div class="card-container">
-      <button class="grade-btn" onclick="selectGrade(1)">Grade 1</button>
-      <button class="grade-btn" onclick="selectGrade(2)">Grade 2</button>
-      <button class="grade-btn" onclick="selectGrade(3)">Grade 3</button>
-      <button class="grade-btn" onclick="selectGrade(4)">Grade 4</button>
-      <button class="grade-btn" onclick="selectGrade(5)">Grade 5</button>
-      <button class="grade-btn" onclick="selectGrade(6)">Grade 6</button>
-      <button class="grade-btn" onclick="selectGrade(7)">Grade 7</button>
-      <button class="grade-btn" onclick="selectGrade(8)">Grade 8</button>
-    </div>
-    <button onclick="goHome()">⬅ Back</button>
-  </section>
+  <div class="container hidden" id="subjects">
+    <h2 id="grade-title"></h2>
+    <p>Select a subject:</p>
+    <div id="subject-selection" class="grid"></div>
+    <button class="btn" onclick="goHome()">⬅ Back</button>
+  </div>
 
-  <!-- Subject Selection -->
-  <section id="subjects" style="display:none;">
-    <h2>Select Subject</h2>
-    <div class="card-container">
-      <button class="subject-btn" onclick="startQuiz('history')">🏺 History</button>
-      <button class="subject-btn" onclick="startQuiz('geography')">🌍 Geography</button>
-      <button class="subject-btn" onclick="startQuiz('politics')">🏛 Politics</button>
-      <button class="subject-btn" onclick="startQuiz('grammar')">✍ Grammar</button>
-      <button class="subject-btn" onclick="startQuiz('maths')">➗ Maths</button>
-    </div>
-    <button onclick="goToGrades()">⬅ Back</button>
-  </section>
-
-  <!-- Quiz Section -->
-  <section id="quiz" style="display:none;">
-    <h2 id="quiz-title"></h2>
-    <p id="progress"></p>
-    <h3 id="question">Question will appear here</h3>
-    <div id="options"></div>
-    <button id="next-btn">Next</button>
-    <button onclick="goSubjects()">⬅ Back</button>
-
-    <!-- Score Result -->
-    <div id="result" style="display:none; margin-top:20px;"></div>
-    <button id="restart-btn" style="display:none;" onclick="restartQuiz()">🔄 Restart Quiz</button>
-  </section>
+  <div class="container hidden" id="quiz">
+    <h2 id="subject-title"></h2>
+    <div id="question-container"></div>
+    <button class="btn hidden" id="next-btn" onclick="nextQuestion()">Next</button>
+    <div id="result" class="hidden"></div>
+    <button class="btn hidden" id="restart-btn" onclick="restartQuiz()">Restart</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
